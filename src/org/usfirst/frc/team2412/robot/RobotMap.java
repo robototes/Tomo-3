@@ -8,7 +8,6 @@
 package org.usfirst.frc.team2412.robot;
 
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
-import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import edu.wpi.first.wpilibj.interfaces.Gyro;
@@ -73,8 +72,8 @@ public class RobotMap {
 	};
 	
 	/** Compressor instances for shooting */
-	public static Compressor[] shootingCompressors = new Compressor[] {
-		new Compressor(shootingCompressorIDs[0]),
-		new Compressor(shootingCompressorIDs[1])
-	};
+//	public static Compressor[] shootingCompressors = new Compressor[] {
+//		new Compressor(shootingCompressorIDs[0]),
+//		new Compressor(shootingCompressorIDs[1])
+//	};
 }
