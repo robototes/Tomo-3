@@ -10,6 +10,6 @@ public class DriveCommand extends CommandBase {
 	/** Called when the command is run */
 	@Override
 	protected void execute() {
-		driveBase.driveMecanumGyro(Robot.m_oi.stick, false);
+		driveBase.driveMecanumGyro(Robot.m_oi.stick, true);
 	}
 }
