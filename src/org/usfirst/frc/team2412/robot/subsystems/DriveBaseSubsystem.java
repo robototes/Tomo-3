@@ -25,7 +25,7 @@ public class DriveBaseSubsystem extends Subsystem {
 		if(useGyro) {
 			driving.driveCartesian(stick.getY(), stick.getX(), stick.getTwist(), gyro.getAngle());
 		} else {
-			driving.driveCartesian(stick.getY(), stick.getX(), stick.getTwist());
+			driving.driveCartesian(stick.getX(), -stick.getY(), stick.getTwist());
 		}
 	}
 }
