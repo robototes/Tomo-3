@@ -15,7 +15,7 @@ public class FireCannonCommand extends CommandBase {
 	/** Determines when this command exits */
 	@Override
 	protected boolean isFinished() {
-		return true;
+		return false;
 	}
 	
 	/** Called when this command ends */
