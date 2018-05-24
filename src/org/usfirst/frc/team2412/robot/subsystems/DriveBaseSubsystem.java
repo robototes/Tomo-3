@@ -23,9 +23,9 @@ public class DriveBaseSubsystem extends Subsystem {
 	/** Method for driving using a joystick and gyroscope if specified*/
 	public void driveMecanumGyro(Joystick stick, boolean useGyro) {
 		if(useGyro) {
-			driving.driveCartesian(stick.getY(), stick.getX(), stick.getTwist(), gyro.getAngle());
+			driving.driveCartesian(-stick.getX(), -stick.getY(), stick.getZ(), 90+gyro.getAngle());
 		} else {
-			driving.driveCartesian(stick.getY(), stick.getX(), stick.getTwist());
+			driving.driveCartesian(-stick.getY(), stick.getX(), stick.getTwist());
 		}
 	}
 }

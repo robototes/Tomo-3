@@ -34,10 +34,10 @@ public class RobotMap {
 	public static int[] drivingTalonsIDs = new int[] {
 		//    FRONT   //
 		//------------//
-		0, /*       */1,
+		0, /*       */2,
 		//------------//
 		//------------//
-		2, /*       */3
+		1, /*       */3
 		//------------//
 		//    BACK    //
 		// [value][description]
