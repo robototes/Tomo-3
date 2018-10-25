@@ -1,6 +1,7 @@
 package org.usfirst.frc.team2412.robot.subsystems;
 
 import org.usfirst.frc.team2412.robot.RobotMap;
+import org.usfirst.frc.team2412.robot.commands.MoveCannonThrottleCommand;
 
 import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -11,7 +12,18 @@ public class MoveCannonSubsystem extends Subsystem {
 	
 	@Override
 	protected void initDefaultCommand() {
-		// TODO Auto-generated method stub
+		setDefaultCommand(new MoveCannonThrottleCommand());
+	}
+	
+	/** Method for moving the cannon based on speed */
+	public void moveCannonSpeed(double speed) {
+		if(speed < -1.0) {
+			speed = -1.0;
+		} else if(speed > 1.0) {
+			speed = 1.0;
+		}
+		
+		moveCannonVictor.set(speed);
 	}
 	
 	/** Method for moving the cannon up */
