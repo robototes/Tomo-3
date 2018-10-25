@@ -10,6 +10,7 @@ package org.usfirst.frc.team2412.robot;
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.Talon;
+import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import edu.wpi.first.wpilibj.interfaces.Gyro;
 
@@ -77,4 +78,14 @@ public class RobotMap {
 //		new Compressor(shootingCompressorIDs[0]),
 //		new Compressor(shootingCompressorIDs[1])
 //	};
+	public static Compressor[] shootingCompressors = new Compressor[] {
+		new Compressor(shootingCompressorIDs[0]),
+		new Compressor(shootingCompressorIDs[1])
+	};
+	
+	/** Victor SP ID for moving the cannon */
+	public static int movingCannonVictorID = 4;
+	
+	/** Victor SP instance for moving the cannon */
+	public static VictorSP movingCannonVictor = new VictorSP(movingCannonVictorID); 
 }
