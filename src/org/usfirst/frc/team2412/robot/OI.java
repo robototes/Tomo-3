@@ -8,6 +8,7 @@
 package org.usfirst.frc.team2412.robot;
 
 import org.usfirst.frc.team2412.robot.commands.FireCannonCommand;
+import org.usfirst.frc.team2412.robot.commands.MoveCannonUpCommand;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -54,5 +55,9 @@ public class OI {
 	
 	public OI() {
 		trigger.whileHeld(new FireCannonCommand());
+		moveUp.whileHeld(new MoveCannonUpCommand());
 	}
+	
+	/** Button for moving the cannon up */
+	public Button moveUp = new JoystickButton(stick, 6);
 }
