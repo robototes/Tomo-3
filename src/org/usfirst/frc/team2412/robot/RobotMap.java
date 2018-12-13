@@ -74,10 +74,10 @@ public class RobotMap {
 	};
 	
 	/** Compressor instances for shooting */
-//	public static Compressor[] shootingCompressors = new Compressor[] {
-//		new Compressor(shootingCompressorIDs[0]),
-//		new Compressor(shootingCompressorIDs[1])
-//	};
+	public static Compressor[] shootingCompressors = new Compressor[] {
+		new Compressor(shootingCompressorIDs[0]),
+		new Compressor(shootingCompressorIDs[1])
+	};
 	
 	/** Victor SP ID for moving the cannon */
 	public static int movingCannonVictorID = 5;
