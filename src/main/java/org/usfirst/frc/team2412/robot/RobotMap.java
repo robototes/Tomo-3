@@ -65,7 +65,7 @@ public class RobotMap {
 	/** Talon SR ID for shooting */
 	public static int shootingTalonID = 4;
 	
-	/** Talon SR instance for shooting */
+	/** Talon SR instance for sh%ooting */
 	public static Talon shootingTalon = new Talon(shootingTalonID);
 	
 	/** Compressor IDs for shooting */

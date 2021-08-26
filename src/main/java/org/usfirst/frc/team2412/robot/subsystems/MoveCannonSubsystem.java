@@ -12,7 +12,7 @@ public class MoveCannonSubsystem extends Subsystem {
 	
 	@Override
 	protected void initDefaultCommand() {
-		setDefaultCommand(new MoveCannonThrottleCommand());
+		setDefaultCommand(new MoveCannonThrottleCommand(0));
 	}
 	
 	/** Method for moving the cannon based on speed */
@@ -28,16 +28,16 @@ public class MoveCannonSubsystem extends Subsystem {
 	
 	/** Method for moving the cannon up */
 	public void moveCannonUp() {
-		moveCannonVictor.set(0.3);
+		moveCannonVictor.set(0.5);
 	}
 	
 	/** Method for moving the cannon down */
 	public void moveCannonDown() {
-		moveCannonVictor.set(-0.3);
+		moveCannonVictor.set(-0.2);
 	}
 	
 	/** Method for not moving the cannon */
 	public void stopCannon() {
-		moveCannonVictor.set(0.0);
+		moveCannonVictor.set(0.5);
 	}
 }

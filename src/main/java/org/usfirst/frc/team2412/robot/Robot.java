@@ -102,7 +102,7 @@ public class Robot extends TimedRobot {
 		if (m_autonomousCommand != null) {
 			m_autonomousCommand.cancel();
 		}
-		(new ChargeCannonCommand()).start(); // Start charging the compressors, but only once.
+		//(new ChargeCannonCommand()).start(); // Start charging the compressors, but only once.
 	}
 
 	/**
