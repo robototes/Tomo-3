@@ -11,7 +11,6 @@ import org.usfirst.frc.team2412.robot.commands.FireCannonCommand;
 import org.usfirst.frc.team2412.robot.commands.MoveCannonDownCommand;
 import org.usfirst.frc.team2412.robot.commands.MoveCannonUpCommand;
 
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;

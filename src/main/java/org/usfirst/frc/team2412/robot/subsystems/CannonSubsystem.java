@@ -4,7 +4,6 @@ import org.usfirst.frc.team2412.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.Relay;
-import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class CannonSubsystem extends Subsystem {
