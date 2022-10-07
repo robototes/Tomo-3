@@ -8,7 +8,7 @@ import org.usfirst.frc.team2412.robot.RobotMap;
 
 public class CannonSubsystem extends Subsystem {
 
-	/** Talon SR instance for shooting 
+	/** Talon SR instance for shooting
 	private Talon shootingTalon = RobotMap.shootingTalon;*/
 	Relay firingRelay = new Relay(0);
 	Talon shootingTalon = RobotMap.shootingTalon;
@@ -35,7 +35,7 @@ public class CannonSubsystem extends Subsystem {
 	/** Method for charging the compressors */
 	public void chargeCompressors() {
 		for (Compressor shootingCompressor : shootingCompressors) {
-			shootingCompressor.start();
+			shootingCompressor.enableDigital();
 		}
 	}
 }
