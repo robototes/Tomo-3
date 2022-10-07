@@ -25,5 +25,12 @@
 			}
 		}
 	],
-	"java.test.defaultConfig": "WPIlibUnitTests"
+	"java.test.defaultConfig": "WPIlibUnitTests",
+
+	// Disable java formatting so prettier can handle it
+	"[java]": {
+		"editor.formatOnPaste": false,
+		"editor.formatOnSave": false,
+		"editor.formatOnType": false
+	}
 }
