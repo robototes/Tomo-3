@@ -7,14 +7,13 @@
 
 package org.usfirst.frc.team2412.robot;
 
-import org.usfirst.frc.team2412.robot.commands.ChargeCannonCommand;
-import org.usfirst.frc.team2412.robot.subsystems.ExampleSubsystem;
-
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import org.usfirst.frc.team2412.robot.commands.ChargeCannonCommand;
+import org.usfirst.frc.team2412.robot.subsystems.ExampleSubsystem;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -24,8 +23,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * project.
  */
 public class Robot extends TimedRobot {
-	public static final ExampleSubsystem kExampleSubsystem
-			= new ExampleSubsystem();
+
+	public static final ExampleSubsystem kExampleSubsystem = new ExampleSubsystem();
 	public static OI m_oi;
 
 	Command m_autonomousCommand;
@@ -48,9 +47,7 @@ public class Robot extends TimedRobot {
 	 * the robot is disabled.
 	 */
 	@Override
-	public void disabledInit() {
-
-	}
+	public void disabledInit() {}
 
 	@Override
 	public void disabledPeriodic() {
@@ -117,6 +114,5 @@ public class Robot extends TimedRobot {
 	 * This function is called periodically during test mode.
 	 */
 	@Override
-	public void testPeriodic() {
-	}
+	public void testPeriodic() {}
 }

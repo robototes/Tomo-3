@@ -11,13 +11,13 @@ public class FireCannonCommand extends CommandBase {
 	protected void execute() {
 		cannon.fireCannon();
 	}
-	
+
 	/** Determines when this command exits */
 	@Override
 	protected boolean isFinished() {
 		return false;
 	}
-	
+
 	/** Called when this command ends */
 	@Override
 	protected void end() {
