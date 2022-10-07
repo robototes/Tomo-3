@@ -80,7 +80,8 @@ public class RobotMap {
 	/** Compressor IDs for shooting */
 	public static int[] shootingCompressorIDs = new int[] { 0, 1 };
 
-	public static PneumaticsModuleType compressorType = PneumaticsModuleType.CTREPCM;
+	public static PneumaticsModuleType compressorType =
+		PneumaticsModuleType.CTREPCM;
 
 	/** Compressor instances for shooting */
 	public static Compressor[] shootingCompressors = new Compressor[] {
