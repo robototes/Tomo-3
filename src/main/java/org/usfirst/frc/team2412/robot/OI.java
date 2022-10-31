@@ -7,7 +7,9 @@
 
 package org.usfirst.frc.team2412.robot;
 
+import edu.wpi.first.wpilibj.SerialPort;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.SerialPort.Port;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import org.usfirst.frc.team2412.robot.commands.FireCannonCommand;
@@ -68,4 +70,7 @@ public class OI {
 
 	/** Button for moving the cannon down */
 	public Button moveDown = new JoystickButton(controller, 1);
+
+	/** Arduino */
+	public static SerialPort arduino = new SerialPort(9600, Port.kUSB2);
 }

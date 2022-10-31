@@ -1,5 +1,7 @@
 package org.usfirst.frc.team2412.robot.commands;
 
+import org.usfirst.frc.team2412.robot.OI;
+
 public class ChargeCannonCommand extends CommandBase {
 
 	public ChargeCannonCommand() {
@@ -10,5 +12,6 @@ public class ChargeCannonCommand extends CommandBase {
 	@Override
 	protected void execute() {
 		cannon.chargeCompressors();
+		OI.arduino.writeString("go");
 	}
 }
