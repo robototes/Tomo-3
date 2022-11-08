@@ -13,7 +13,7 @@ public class DriveBaseSubsystem extends SubsystemBase {
 	private MecanumDrive driving = RobotMap.driving;
 
 	/** Gyroscope instance for driving */
-	private Gyro gyro = RobotMap.gyro;
+	//private Gyro gyro = RobotMap.gyro;
 
 	public DriveBaseSubsystem() {
 		setDefaultCommand(new DriveCommand());
