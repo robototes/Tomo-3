@@ -69,7 +69,7 @@ public class RobotMap {
 	);
 
 	/** Gyroscope instance for driving */
-	public static Gyro gyro = new ADXRS450_Gyro();
+	// public static Gyro gyro = new ADXRS450_Gyro();
 
 	/** Talon SR ID for shooting */
 	public static int shootingTalonID = 4;
