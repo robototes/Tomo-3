@@ -10,8 +10,8 @@ package org.usfirst.frc.team2412.robot;
 import edu.wpi.first.wpilibj.SerialPort;
 import edu.wpi.first.wpilibj.SerialPort.Port;
 import edu.wpi.first.wpilibj.XboxController;
-import edu.wpi.first.wpilibj.buttons.Button;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj2.command.button.Button;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import org.usfirst.frc.team2412.robot.commands.FireCannonCommand;
 import org.usfirst.frc.team2412.robot.commands.MoveCannonDownCommand;
 import org.usfirst.frc.team2412.robot.commands.MoveCannonThrottleCommand;
@@ -72,5 +72,5 @@ public class OI {
 	public Button moveDown = new JoystickButton(controller, 1);
 
 	/** Arduino */
-	public static SerialPort arduino = new SerialPort(9600, Port.kUSB2);
+	public static SerialPort arduino = new SerialPort(9600, Port.kUSB);
 }

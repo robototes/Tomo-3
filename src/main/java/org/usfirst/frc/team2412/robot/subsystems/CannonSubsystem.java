@@ -2,11 +2,11 @@ package org.usfirst.frc.team2412.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.Relay;
-import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.motorcontrol.Talon;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import org.usfirst.frc.team2412.robot.RobotMap;
 
-public class CannonSubsystem extends Subsystem {
+public class CannonSubsystem extends SubsystemBase {
 
 	/** Talon SR instance for shooting
 	private Talon shootingTalon = RobotMap.shootingTalon;*/
@@ -14,9 +14,6 @@ public class CannonSubsystem extends Subsystem {
 	Talon shootingTalon = RobotMap.shootingTalon;
 	/** Compressor instances for charging pneumatics */
 	private Compressor[] shootingCompressors = RobotMap.shootingCompressors;
-
-	@Override
-	protected void initDefaultCommand() {}
 
 	/** Method for firing the cannon */
 	public void fireCannon() {

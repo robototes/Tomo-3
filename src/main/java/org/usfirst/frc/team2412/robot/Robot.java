@@ -8,10 +8,10 @@
 package org.usfirst.frc.team2412.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import org.usfirst.frc.team2412.robot.subsystems.ExampleSubsystem;
 
 /**
@@ -38,6 +38,7 @@ public class Robot extends TimedRobot {
 		m_oi = new OI();
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", m_chooser);
+		OI.arduino.writeString("go");
 	}
 
 	/**
@@ -50,7 +51,7 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void disabledPeriodic() {
-		Scheduler.getInstance().run();
+		CommandScheduler.getInstance().run();
 	}
 
 	/**
@@ -60,7 +61,8 @@ public class Robot extends TimedRobot {
 	 * LabVIEW Dashboard, remove all of the chooser code and uncomment the
 	 * getString code to get the auto name from the text box below the Gyro
 	 *
-	 * <p>You can add additional auto modes by adding additional commands to the
+	 * <p>
+	 * You can add additional auto modes by adding additional commands to the
 	 * chooser code above (like the commented example) or additional comparisons
 	 * to the switch structure below with additional strings & commands.
 	 */
@@ -77,7 +79,7 @@ public class Robot extends TimedRobot {
 
 		// schedule the autonomous command (example)
 		if (m_autonomousCommand != null) {
-			m_autonomousCommand.start();
+			m_autonomousCommand.schedule();
 		}
 	}
 
@@ -86,7 +88,7 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void autonomousPeriodic() {
-		Scheduler.getInstance().run();
+		CommandScheduler.getInstance().run();
 	}
 
 	@Override
@@ -98,7 +100,8 @@ public class Robot extends TimedRobot {
 		if (m_autonomousCommand != null) {
 			m_autonomousCommand.cancel();
 		}
-		//(new ChargeCannonCommand()).start(); // Start charging the compressors, but only once.
+		// (new ChargeCannonCommand()).start(); // Start charging the compressors, but
+		// only once.
 	}
 
 	/**
@@ -106,7 +109,7 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void teleopPeriodic() {
-		Scheduler.getInstance().run();
+		CommandScheduler.getInstance().run();
 	}
 
 	/**

@@ -1,17 +1,16 @@
 package org.usfirst.frc.team2412.robot.subsystems;
 
-import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.motorcontrol.VictorSP;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import org.usfirst.frc.team2412.robot.RobotMap;
 import org.usfirst.frc.team2412.robot.commands.MoveCannonThrottleCommand;
 
-public class MoveCannonSubsystem extends Subsystem {
+public class MoveCannonSubsystem extends SubsystemBase {
 
 	/** Victor SP instance for moving the cannon up and down */
 	private VictorSP moveCannonVictor = RobotMap.movingCannonVictor;
 
-	@Override
-	protected void initDefaultCommand() {
+	public MoveCannonSubsystem() {
 		setDefaultCommand(new MoveCannonThrottleCommand(0));
 	}
 
