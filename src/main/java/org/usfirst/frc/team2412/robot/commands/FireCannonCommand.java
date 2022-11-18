@@ -1,28 +1,15 @@
 package org.usfirst.frc.team2412.robot.commands;
 
-import org.usfirst.frc.team2412.robot.OI;
+import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 
-public class FireCannonCommand extends CommandBase {
+public class FireCannonCommand extends SequentialCommandGroup {
 
 	public FireCannonCommand() {
-		addRequirements(cannon);
+		addCommands(new WaitForArduinoCommand(), new ShootCannonCommand());
 	}
 
-	/** Called when the command is run */
-	@Override
-	public void execute() {
-		cannon.fireCannon();
-	}
-
-	/** Determines when this command exits */
-	@Override
-	public boolean isFinished() {
-		return OI.arduino.readString() != "";
-	}
-
-	/** Called when this command ends */
 	@Override
 	public void end(boolean interrupted) {
-		cannon.resetCannon();
+		CommandBase.cannon.resetCannon();
 	}
 }

@@ -11,7 +11,7 @@ public class MoveCannonSubsystem extends SubsystemBase {
 	private VictorSP moveCannonVictor = RobotMap.movingCannonVictor;
 
 	public MoveCannonSubsystem() {
-		setDefaultCommand(new MoveCannonThrottleCommand(0));
+		setDefaultCommand(new MoveCannonThrottleCommand(this, 0));
 	}
 
 	/** Method for moving the cannon based on speed */

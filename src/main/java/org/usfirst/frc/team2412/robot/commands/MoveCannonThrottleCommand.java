@@ -1,10 +1,17 @@
 package org.usfirst.frc.team2412.robot.commands;
 
+import org.usfirst.frc.team2412.robot.subsystems.MoveCannonSubsystem;
+
 public class MoveCannonThrottleCommand extends CommandBase {
 
 	double speed;
+	MoveCannonSubsystem moveCannon;
 
-	public MoveCannonThrottleCommand(double speed) {
+	public MoveCannonThrottleCommand(
+		MoveCannonSubsystem moveCannon,
+		double speed
+	) {
+		this.moveCannon = moveCannon;
 		addRequirements(moveCannon);
 		this.speed = speed;
 	}

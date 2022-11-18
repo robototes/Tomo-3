@@ -38,7 +38,6 @@ public class Robot extends TimedRobot {
 		m_oi = new OI();
 		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", m_chooser);
-		OI.arduino.writeString("go");
 	}
 
 	/**

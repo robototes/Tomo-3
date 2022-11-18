@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.SerialPort.Port;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.button.Button;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import org.usfirst.frc.team2412.robot.commands.CommandBase;
 import org.usfirst.frc.team2412.robot.commands.FireCannonCommand;
 import org.usfirst.frc.team2412.robot.commands.MoveCannonDownCommand;
 import org.usfirst.frc.team2412.robot.commands.MoveCannonThrottleCommand;
@@ -58,11 +59,13 @@ public class OI {
 	public Button trigger = new JoystickButton(controller, 6);
 
 	public OI() {
-		trigger.whileHeld(new FireCannonCommand());
+		trigger.whenPressed(new FireCannonCommand());
 
 		moveUp.whileHeld(new MoveCannonUpCommand());
 		moveDown.whileHeld(new MoveCannonDownCommand());
-		moveUp.whenReleased(new MoveCannonThrottleCommand(0.25));
+		moveUp.whenReleased(
+			new MoveCannonThrottleCommand(CommandBase.moveCannon, .25)
+		);
 	}
 
 	/** Button for moving the cannon up */
