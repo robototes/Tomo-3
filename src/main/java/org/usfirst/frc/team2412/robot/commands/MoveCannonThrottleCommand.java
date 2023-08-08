@@ -1,31 +1,36 @@
 package org.usfirst.frc.team2412.robot.commands;
 
-import org.usfirst.frc.team2412.robot.Robot;
-
-import edu.wpi.first.wpilibj.GenericHID.Hand;
+import org.usfirst.frc.team2412.robot.subsystems.MoveCannonSubsystem;
 
 public class MoveCannonThrottleCommand extends CommandBase {
+
 	double speed;
-	public MoveCannonThrottleCommand(double speed) {
-		requires(moveCannon);
+	MoveCannonSubsystem moveCannon;
+
+	public MoveCannonThrottleCommand(
+		MoveCannonSubsystem moveCannon,
+		double speed
+	) {
+		this.moveCannon = moveCannon;
+		addRequirements(moveCannon);
 		this.speed = speed;
 	}
-	
+
 	/** Called when the command is run */
 	@Override
-	protected void execute() {
+	public void execute() {
 		moveCannon.moveCannonSpeed(speed);
 	}
-	
+
 	/** Determines when this command exits */
 	@Override
-	protected boolean isFinished() {
+	public boolean isFinished() {
 		return false;
 	}
-	
+
 	/** Called when this command ends */
 	@Override
-	protected void end() {
-//		moveCannon.stopCannon();
+	public void end(boolean interrupted) {
+		//		moveCannon.stopCannon();
 	}
 }

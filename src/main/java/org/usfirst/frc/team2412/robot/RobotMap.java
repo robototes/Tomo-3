@@ -7,12 +7,11 @@
 
 package org.usfirst.frc.team2412.robot;
 
-import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.Compressor;
-import edu.wpi.first.wpilibj.Talon;
-import edu.wpi.first.wpilibj.VictorSP;
+import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
-import edu.wpi.first.wpilibj.interfaces.Gyro;
+import edu.wpi.first.wpilibj.motorcontrol.Talon;
+import edu.wpi.first.wpilibj.motorcontrol.VictorSP;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -21,6 +20,7 @@ import edu.wpi.first.wpilibj.interfaces.Gyro;
  * floating around.
  */
 public class RobotMap {
+
 	// For example to map the left and right motors, you could define the
 	// following variables to use with your drivetrain subsystem.
 	// public static int leftMotor = 1;
@@ -30,15 +30,17 @@ public class RobotMap {
 	// number and the module. For example you with a rangefinder:
 	// public static int rangefinderPort = 1;
 	// public static int rangefinderModule = 1;
-	
+
 	/** Talon SR IDs for driving */
 	public static int[] drivingTalonsIDs = new int[] {
 		//    FRONT   //
 		//------------//
-		0, /*       */2,
+		0,
+		/*       */2,
 		//------------//
 		//------------//
-		1, /*       */3
+		1,
+		/*       */3,
 		//------------//
 		//    BACK    //
 		// [value][description]
@@ -47,41 +49,49 @@ public class RobotMap {
 		// 2 back-left
 		// 3 back-right
 	};
-	
+
 	/** Talon SR instances for driving */
 	public static Talon[] drivingTalons = new Talon[] {
 		new Talon(drivingTalonsIDs[0]),
 		new Talon(drivingTalonsIDs[1]),
 		new Talon(drivingTalonsIDs[2]),
-		new Talon(drivingTalonsIDs[3])
+		new Talon(drivingTalonsIDs[3]),
 	};
-	
+
 	/** MecanumDrive instance for driving */
-	public static MecanumDrive driving = new MecanumDrive(drivingTalons[0], drivingTalons[2], drivingTalons[1], drivingTalons[3]);
-	
+	public static MecanumDrive driving = new MecanumDrive(
+		drivingTalons[0],
+		drivingTalons[2],
+		drivingTalons[1],
+		drivingTalons[3]
+	);
+
 	/** Gyroscope instance for driving */
-	public static Gyro gyro = new ADXRS450_Gyro();
-	
+	// public static Gyro gyro = new ADXRS450_Gyro();
+
 	/** Talon SR ID for shooting */
 	public static int shootingTalonID = 4;
-	
+
 	/** Talon SR instance for sh%ooting */
 	public static Talon shootingTalon = new Talon(shootingTalonID);
-	
+
 	/** Compressor IDs for shooting */
-	public static int[] shootingCompressorIDs = new int[] {
-		0, 1
-	};
-	
+	public static int[] shootingCompressorIDs = new int[] { 0, 1 };
+
+	public static PneumaticsModuleType compressorType =
+		PneumaticsModuleType.CTREPCM;
+
 	/** Compressor instances for shooting */
 	public static Compressor[] shootingCompressors = new Compressor[] {
-		new Compressor(shootingCompressorIDs[0]),
-		new Compressor(shootingCompressorIDs[1])
+		new Compressor(shootingCompressorIDs[0], compressorType),
+		new Compressor(shootingCompressorIDs[1], compressorType),
 	};
-	
+
 	/** Victor SP ID for moving the cannon */
 	public static int movingCannonVictorID = 5;
-	
+
 	/** Victor SP instance for moving the cannon */
-	public static VictorSP movingCannonVictor = new VictorSP(movingCannonVictorID); 
+	public static VictorSP movingCannonVictor = new VictorSP(
+		movingCannonVictorID
+	);
 }
