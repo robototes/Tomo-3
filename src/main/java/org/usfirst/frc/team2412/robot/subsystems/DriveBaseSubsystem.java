@@ -16,6 +16,9 @@ public class DriveBaseSubsystem extends SubsystemBase {
 
 	public DriveBaseSubsystem() {
 		setDefaultCommand(new DriveCommand(this));
+
+		RobotMap.drivingTalons[1].setInverted(true);
+		RobotMap.drivingTalons[3].setInverted(true);
 	}
 
 	/** Method for driving using a joystick and gyroscope if specified*/
@@ -29,8 +32,8 @@ public class DriveBaseSubsystem extends SubsystemBase {
 			);
 		} else {*/
 		driving.driveCartesian(
+			stick.getLeftY(),
 			stick.getLeftX(),
-			-stick.getLeftY(),
 			stick.getRightX()
 		);
 		//}

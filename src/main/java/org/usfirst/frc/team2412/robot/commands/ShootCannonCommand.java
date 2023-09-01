@@ -19,6 +19,11 @@ public class ShootCannonCommand extends CommandBase {
 	}
 
 	@Override
+	public void end(boolean interrupted) {
+		cannon.resetCannon();
+	}
+
+	@Override
 	public boolean isFinished() {
 		return System.currentTimeMillis() >= time + 1000;
 	}

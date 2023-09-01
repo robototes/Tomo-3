@@ -17,6 +17,7 @@ import org.usfirst.frc.team2412.robot.commands.FireCannonCommand;
 import org.usfirst.frc.team2412.robot.commands.MoveCannonDownCommand;
 import org.usfirst.frc.team2412.robot.commands.MoveCannonThrottleCommand;
 import org.usfirst.frc.team2412.robot.commands.MoveCannonUpCommand;
+import org.usfirst.frc.team2412.robot.commands.ShootCannonCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -56,16 +57,18 @@ public class OI {
 	public XboxController controller = new XboxController(0);
 
 	/** The joystick's trigger */
-	public Button trigger = new JoystickButton(controller, 6);
+	public Button triggerWithAnimation = new JoystickButton(controller, 6);
+	public Button triggerNoAnimation = new JoystickButton(controller, 5); // prob. wrong
 
 	public OI() {
-		trigger.whenPressed(new FireCannonCommand());
+		triggerWithAnimation.whenPressed(new FireCannonCommand());
+		triggerNoAnimation.whileHeld(new ShootCannonCommand(), true);
 
 		moveUp.whileHeld(new MoveCannonUpCommand());
 		moveDown.whileHeld(new MoveCannonDownCommand());
-		moveUp.whenReleased(
-			new MoveCannonThrottleCommand(CommandBase.moveCannon, .25)
-		);
+		// moveUp.whenReleased(
+		// 	new MoveCannonThrottleCommand(CommandBase.moveCannon, .25)
+		// );
 	}
 
 	/** Button for moving the cannon up */

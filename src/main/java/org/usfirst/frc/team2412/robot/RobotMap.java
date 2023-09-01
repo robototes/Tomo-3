@@ -52,10 +52,10 @@ public class RobotMap {
 
 	/** Talon SR instances for driving */
 	public static Talon[] drivingTalons = new Talon[] {
-		new Talon(drivingTalonsIDs[0]),
-		new Talon(drivingTalonsIDs[1]),
-		new Talon(drivingTalonsIDs[2]),
-		new Talon(drivingTalonsIDs[3]),
+		new Talon(drivingTalonsIDs[0]), // front left
+		new Talon(drivingTalonsIDs[1]), // front right
+		new Talon(drivingTalonsIDs[2]), // back left
+		new Talon(drivingTalonsIDs[3]), // back right
 	};
 
 	/** MecanumDrive instance for driving */

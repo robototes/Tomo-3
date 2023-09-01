@@ -37,6 +37,6 @@ public class MoveCannonSubsystem extends SubsystemBase {
 
 	/** Method for not moving the cannon */
 	public void stopCannon() {
-		moveCannonVictor.set(0.5);
+		moveCannonVictor.set(0.0);
 	}
 }

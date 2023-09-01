@@ -7,9 +7,4 @@ public class FireCannonCommand extends SequentialCommandGroup {
 	public FireCannonCommand() {
 		addCommands(new WaitForArduinoCommand(), new ShootCannonCommand());
 	}
-
-	@Override
-	public void end(boolean interrupted) {
-		CommandBase.cannon.resetCannon();
-	}
 }
